@@ -1,0 +1,14 @@
+﻿<ion-view view-title="中北市场">
+    <ion-content padding="true">
+        <h2 class="center">{{data.Title}}</h2>
+        <div>
+            <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" auto-play="true">
+                <ion-slide ng-repeat="item in pictures">
+                    <img ng-src="{{item}}" style="width: 100%;" />
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+        <p>{{data.Description}}</p>
+
+    </ion-content>
+</ion-view>

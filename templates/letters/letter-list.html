@@ -1,0 +1,49 @@
+﻿<ion-view>
+    <ion-nav-title>
+        <div class="item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="text" ng-model="searchData.letterTitle" placeholder="标题..." />
+            </label>
+        </div>
+    </ion-nav-title>
+    <ion-nav-buttons side="secondary">
+        <button class="button" ng-click="showSheet()">
+            查询: {{searchData.letterType}}
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <ion-refresher pulling-text="放手后刷新..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+            <div ng-repeat="item in data">
+                <ion-item ng-href="#/tab/letter-details/{{item.LetterID}}">
+                    <div class="topRemark">
+                        No. {{item.LetterNo}}
+                    </div>
+                    <h2 class="title">{{item.Title}}</h2>
+                    <div class="bottomRemark">
+                        <i class="icon ion-edit"></i>
+                        {{item.SubmittedTime | date:"MM-dd hh:mm"}}
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="icon ion-arrow-return-right"></i>
+                        {{item.RepliedTime | date:"MM-dd hh:mm"}}
+                    </div>
+                </ion-item>
+            </div>
+        </ion-list>
+        <ion-infinite-scroll ng-if="scollData.haveData" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+    <script id="type-select.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar class="bar-positive">
+                <h1 class="title">请选择信件类型</h1>
+                <button class="button icon ion-checkmark" ng-click="doQuery()"></button>
+            </ion-header-bar>
+            <ion-content>
+                <ion-list>
+                    <ion-radio ng-model="newTypeData.selectedName" ng-repeat="item in newTypeData.newsTypes" ng-value="item.Name">{{item.Name}}</ion-radio>
+                </ion-list>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+</ion-view>

@@ -1,0 +1,124 @@
+﻿<ion-view view-title="iNUC">
+    <ion-content class="animate-fade-slide-in" >
+        <div class="home_flash">
+            <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" auto-play="true">
+                <ion-slide>
+                    <img src="img/flash1.jpg" style="width: 100%;" />
+                </ion-slide>
+                <ion-slide ng-repeat="slide in slides">
+                    <img ng-src="{{slide.TitlePicture}}" style="width: 100%;" />
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+
+        <div class="list card" ui-sref="tab.oanews">
+
+            <div class="item item-avatar">
+                <img src="img/OA.png">
+                <h2>OA资讯</h2>
+                <p>教职工看这里</p>
+            </div>
+
+
+            <!--<div class="item item-image">
+                <img src="cover.jpg">
+            </div>-->
+
+        </div>
+        <p class="padding">
+            更新时间：2017年5月23日16:14:20<br />
+            版本号：v4.1.0 <br />
+            更新特性：<br />
+            1.修改发布新闻图标以及发布微空间<br />
+            2.修改微空间评论的图标<br />
+            3.关于图片放大的问题在下一个版本改进<br />
+        </p>
+        <!--<div class="item card-item">
+            <div ui-sref="tab.news" class="card stable-bg ink ink-dark">
+                <div class="item item-avatar item-text-wrap">
+                    <span class="avatar" style="background-image: url('img/news.png');"></span>
+                    <strong>新闻资讯</strong>
+                    <div class="card-footer text-right">
+                        <i class="icon ion-heart assertive"></i> 23
+                        <div class="pull-left">
+                            <i class="icon ion-clock"></i> just now
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item card-item">
+            <div ui-sref="tab.talkings" class="card stable-bg ink ink-dark">
+                <div class="item item-avatar item-text-wrap">
+                    <span class="avatar" style="background-image: url('img/space.png');"></span>
+                    <strong>微空间</strong>
+                    <div class="card-footer text-right">
+                        <i class="icon ion-heart assertive"></i> 23
+                        <div class="pull-left">
+                            <i class="icon ion-clock"></i> just now
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <!--<div class="item card-item">
+            <div ui-sref="tab.oanews" class="card stable-bg ink ink-dark">
+                <div class="item item-avatar item-text-wrap">
+                    <span class="avatar" style="background-image: url('img/OA.png');"></span>
+                    <strong>OA资讯</strong>
+                    <div class="card-footer text-right">
+                        <i class="icon ion-heart assertive"></i> 23
+                        <div class="pull-left">
+                            <i class="icon ion-clock"></i> just now
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+
+        
+         <!-- <div class="row">
+            <div class="col">
+                <a ng-href="#/tab/news" class="button button-block button-positive">
+                    
+                    新闻资讯
+                </a>
+            </div>
+            <div class="col">
+                <a ng-href="#/tab/talkings" class="button button-block button-positive">
+                    微空间
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <a ng-href="#/tab/oanews" class="button button-block button-positive">
+                OA资讯
+            </a>
+        </div>-->   
+       
+        
+    <!--<div class="row">
+            
+            <div class="col">
+                <a ng-href="#/tab/oameetings" class="button button-block button-positive">
+                    OA会议
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a ng-href="#/tab/letters" class="button button-block button-positive">
+                    校长信箱
+                </a>
+            </div>
+            <div class="col">
+                <a ng-href="#/tab/commodity" class="button button-block button-positive">
+                    中北市场
+                </a>
+            </div>
+        </div>-->
+    </ion-content>
+</ion-view>

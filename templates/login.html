@@ -1,0 +1,33 @@
+﻿<ion-view view-title="登陆" cache-view="false">
+    <ion-nav-buttons side="left">
+        <!--<a class="button icon ion-arrow-left-b icon-left" ng-click="goBack()">
+        </a>
+        -->
+        <a class="button icon ion-arrow-left-b icon-left" ui-sref="tab.home">
+        </a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a class="button icon ion-person-add icon-right" ng-href='#/register'>
+            注册
+        </a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="card">
+            <form ng-submit="doLogin()">
+                <div class="list">
+                    <label class="item item-input">
+                        <input type="text" ng-model="loginData.username" placeholder="请输入手机号">
+                    </label>
+                    <label class="item item-input">
+                        <input type="password" ng-model="loginData.password" placeholder="请输入密码">
+                    </label>
+                    <label class="item">
+                        <button class="button button-block button-positive" type="submit">登陆</button>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
+
+

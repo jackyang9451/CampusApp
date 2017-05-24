@@ -1,0 +1,41 @@
+﻿<ion-view view-title="个人中心" cache-view="false">
+    <ion-nav-buttons side="left">
+        <!--<a class="button icon ion-arrow-left-b icon-left" ui-sref="tab.news">
+        </a>-->
+        <a class="button icon-left ion-arrow-left-a button-clear" ui-sref="tab.set"></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="text-center">
+            <img src="{{personnel.PictureUrl ? personnel.PictureUrl : 'img/person.png'}}" style="width: 50%; border-radius: 50%; margin-top: 10px; border: solid 2px blue;" />
+        </div>
+        <ion-list type="card">
+            <ion-item class="item-remove-animate item-icon-right">
+                <h2>手机号：{{personnel.MobilePhone}}</h2>
+            </ion-item>
+            <ion-item class="item-remove-animate item-icon-right">
+                <h2>呢称：{{personnel.Nickname}}</h2>
+            </ion-item>
+            <ion-item class="item-remove-animate item-icon-right">
+                <h2>性别：{{personnel.Sex}}</h2>
+            </ion-item>
+            <ion-item class="item-remove-animate item-icon-right">
+                <h2>姓名：{{personnel.Name}}</h2>
+            </ion-item>
+            <ion-item class="item-remove-animate item-icon-right">
+                <h2>学号：{{personnel.StudentNo}}</h2>
+            </ion-item>
+        </ion-list>
+        <div class="row">
+            <div class="col">
+                <a class="button button-click button-assertive button-block" ng-href="#/tab/my-update">
+                    修改信息
+                </a>
+            </div>
+            <div class="col">
+                <a class="button button-click button-assertive button-block" ng-href="#/changePassword">
+                    修改密码
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

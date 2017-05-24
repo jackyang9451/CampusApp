@@ -1,0 +1,24 @@
+﻿<ion-view view-title="中北市场" cache-view="false">
+    <ion-nav-buttons side="secondary">
+        <a class="button button-icon icon ion-edit" ng-href="#/tab/commodity-publish">
+        </a>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-refresher pulling-text="放手后刷新..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+            <div ng-repeat="item in data">
+                <a class="item item-thumbnail-left" ng-href="#/tab/commodity-details/{{item.CommodityID}}">
+                    <img ng-src="{{item.PictureUrl}}"/>
+                    <h2 class="title">{{item.Title}}</h2>
+                    <p>{{item.Description}}</p>
+                    <div class="bottomRemark">
+                        价格: {{item.Price}}
+                        成色：{{item.Newness}}
+                        交易地点：{{item.Place}}
+                    </div>
+                </a>
+            </div>
+        </ion-list>
+        <ion-infinite-scroll ng-if="scollData.haveData" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

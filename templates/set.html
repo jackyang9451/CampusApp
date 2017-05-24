@@ -1,0 +1,65 @@
+﻿<ion-view view-title="设置" cache-view="false">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div class="person-panel">
+            <div style="width: 25%; float: left;">
+                <div ng-if="!isLogin">
+                    <img src="img/person.png" />
+                </div>
+                <div ng-if="isLogin">
+                    <a href="#/tab/my">
+                        <img src="{{picture}}" style="border: solid 2px blue;" />
+                    </a>
+                </div>
+            </div>
+            <div style="width: 75%; float: left;">
+                <div ng-if="!isLogin" style="padding: 20px;">
+                    <a class="button button-click button-assertive" ng-href="#/login" ng-controller="LoginCtrl">
+                        登陆
+                    </a>
+                    <a class="button button-click button-balanced" ng-href="#/register" ng-controller="LoginCtrl">
+                        注册
+                    </a>
+                </div>
+                <div ng-if="isLogin" style="padding: 20px 0px;">
+                    <ion-list>
+                        <div class="item item-button-right" style="padding:16px">
+                            手机号：{{username}}
+                            <!--<button class="button button-assertive" ng-click="logOut()" ng-controller="LoginCtrl">
+                                退出
+                            </button>-->
+                            <div class="button button-assertive" style="padding:5px;float:right;" ng-click="logOut()" ng-controller="LoginCtrl">退出</div>
+                        </div>
+                    </ion-list>
+                </div>
+                
+
+            </div>
+        </div>
+
+
+        <ion-list type="card">
+            <ion-item class="item-remove-animate item-icon-right">
+                <h2>关于我们</h2>
+                <p>
+                   更新时间：2017年5月8日20:31:31<br />
+                   版本号：v2.0.11 
+                </p>
+            </ion-item>
+            <ion-item class="item-remove-animate item-icon-right" href="#/tab/about-policy">
+            </ion-item>           
+        </ion-list>
+        <p class="padding">
+            更新特性：<br />
+            1.修改发布新闻图标以及发布微空间<br />
+            2.修改微空间评论的图标<br />
+            3.关于图片放大的问题在下一个版本改进<br />
+            为了更好的用户体验，请大家注册账号并且登录使用。<br />
+            感谢同学们参与测试！<br />
+            如果大家有什么意见或者建议 请联系QQ：<br />943830422或者935988288<br />
+            或者手机号码：18603518513
+        </p>
+        
+
+
+    </ion-content>
+</ion-view>

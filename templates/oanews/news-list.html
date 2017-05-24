@@ -1,0 +1,23 @@
+﻿<ion-view>
+    <ion-nav-title class="text-center">
+        OA{{newType}}
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear pull-right" ng-click="showSheet()">类型</button>
+    </ion-nav-buttons>
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+        <ion-refresher pulling-text="放手后刷新..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list class="item">
+            <div ng-repeat="news in data">
+                <a class="item" ng-href="#/tab/oanews-details/{{news.ID}}">
+                    <h2 class="title">{{news.Title}}</h2>
+                    <div class="bottomRemark">
+                        <i class="icon ion-compose"></i>
+                        {{news.Time | date:"MM-dd hh:mm"}}
+                    </div>
+                </a>
+            </div>
+        </ion-list>
+        <ion-infinite-scroll ng-if="scollData.haveData" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

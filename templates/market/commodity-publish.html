@@ -1,0 +1,88 @@
+﻿<ion-view view-title="发布新商品" cache-view="false">
+    <ion-content padding="true">
+        <ion-list>
+            <ion-item>
+                <div class="item item-input">
+                    <input type="text" ng-model="data.title" placeholder="商品名称(限20字)" />
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="item item-input">
+                    <textarea ng-model="data.description" placeholder="商品简介(限200字)" style="width: 100%; height: 100px;"></textarea>
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="item item-input">
+                    <span class="input-label">价格</span>
+                    <input type="number" ng-model="data.price" />
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="item item-input">
+                    <span class="input-label">成色</span>
+                    <input type="text" ng-model="data.newness" placeholder="输入几成新" />
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="item item-input">
+                    <span class="input-label">联系方式</span>
+                    <input type="text" ng-model="data.contact" placeholder="联系方式" />
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="item item-input">
+                    <span class="input-label">交易地点</span>
+                    <input type="text" ng-model="data.place" placeholder="如送货上门，或具体地点" />
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="item item-input">
+                    <span class="input-label">商品类别</span>
+                    <select ng-model="data.labels">
+                        <option ng-repeat="label in commodityLabels" value="{{label.LabelName}}">{{label.LabelName}}</option>
+                    </select>
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="item item-input">
+                    <span class="input-label">拥有数量(默认999)</span>
+                    <input type="number" ng-model="data.maxCount" placeholder="拥有数量" />
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="item item-input">
+                    <span class="input-label">结束交易时间</span>
+                    <input type="date" ng-model="data.tradeEndTime" placeholder="最迟交易时间" />
+                </div>
+            </ion-item>
+            <ion-item>
+                <div class="row">
+                    <div class="col">
+                        <img src="{{data.pic[0]}}" style="width: 100%;" />
+                        <p>
+                            <a class="button button-icon icon ion-camera" ng-click="getPicture(0,0)"></a>
+                        </p>
+                        <p class="text-center">图片1</p>
+                    </div>
+                    <div class="col">
+                        <img src="{{data.pic[1]}}" style="width: 100%;" />
+                        <p>
+                            <a class="button button-icon icon ion-camera" ng-click="getPicture(1,0)"></a>
+                        </p>
+                        <p class="text-center">图片2</p>
+                    </div>
+                    <div class="col">
+                        <img src="{{data.pic[2]}}" style="width: 100%;" />
+                        <p>
+                            <a class="button button-icon icon ion-camera" ng-click="getPicture(2,0)"></a>
+                        </p>
+                        <p class="text-center">图片3</p>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item>
+                <button class="button button-block button-assertive" ng-click="publish()">发布</button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

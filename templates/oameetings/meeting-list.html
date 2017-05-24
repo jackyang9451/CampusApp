@@ -1,0 +1,36 @@
+﻿<ion-view view-title="OA会议">
+    <ion-nav-title>
+        <a class="button button-small button-icon icon ion-ios-arrow-left" ng-click="changeWeek(-1)"></a>
+        {{firstDay | date:"MM-dd"}}至{{endDay | date:"MM-dd"}}
+        <a class="button button-small button-icon icon ion-ios-arrow-right" ng-click="changeWeek(1)"></a>
+    </ion-nav-title>
+    <!--<ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>-->
+    <ion-content>
+        <ion-list>
+            <div ng-repeat="item in data">
+                <div class="item">
+                    <h2 class="title">{{item.Title}}</h2>
+                    <p>
+                        <strong>时间:</strong>
+                        {{item.Time | date:"MM-dd hh:mm"}}
+                    </p>
+                    <p>
+                        <strong>地点:</strong>
+                        {{item.Address}}
+                    </p>
+                    <p>
+                        <strong>参会单位:</strong>
+                        {{item.DepartName}}
+                    </p>
+                    <p style="white-space: normal;">
+                        <strong>参会人员:</strong>
+                        {{item.Attendees}}
+                    </p>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

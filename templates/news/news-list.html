@@ -1,0 +1,30 @@
+﻿
+<ion-view view-title="新闻资讯">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+        <ion-refresher pulling-text="放手后刷新..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list class="item">
+            <div ng-repeat="news in data">
+                <a ng-if="news.TitlePicture != null" class="item item-thumbnail-left" ng-href="#/tab/news-details/{{news.ID}}">
+                    <img ng-src="{{news.TitlePicture}}" />
+                    <h2 class="title">{{news.Title}}</h2>
+                    <div class="bottomRemark">
+                        <i class="icon ion-compose"></i>
+                        {{news.PublishTime | date:"MM-dd hh:mm"}}
+                        <i class="icon ion-eye"></i>
+                        {{news.Hits}}
+                    </div>
+                </a>
+                <a ng-if="news.TitlePicture == null" class="item" ng-href="#/tab/news-details/{{news.ID}}">
+                    <h2 class="title">{{news.Title}}</h2>
+                    <div class="bottomRemark">
+                        <i class="icon ion-compose"></i>
+                        {{news.PublishTime | date:"MM-dd hh:mm"}}
+                        <i class="icon ion-eye"></i>
+                        {{news.Hits}}
+                    </div>
+                </a>
+            </div>
+        </ion-list>
+        <ion-infinite-scroll ng-if="scollData.haveData" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

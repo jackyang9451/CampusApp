@@ -1,0 +1,36 @@
+﻿<ion-view view-title="微空间">
+    <!--<ion-nav-buttons side="secondary">
+        <a class="button button-icon icon ion-edit" ng-href="#/tab/talking-publish">
+        </a>
+    </ion-nav-buttons>-->
+    <ion-content ng-class="{expanded:isExpanded}">
+        <ion-refresher pulling-text="放手后刷新..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list class="card item">
+            <div ng-repeat="item in data">
+                <div class="item item-avatar item-button-right">
+                    <img src="{{item.UserPictureUrl}}" />
+                    <h2>{{item.Nickname}}</h2>
+                    <p>{{news.PublishTime | date:"MM-dd hh:mm"}}</p>
+                </div>
+                <div class="item item-body">
+                    <!--<ion-scroll zooming="true" direction="xy" style="width: 100%; height: 70%">-->
+                        <div ng-bind-html="item.Contents"></div>
+                    <!--</ion-scroll>-->
+                </div>
+                <div class="item item-text-wrap" style="border-bottom: 2px solid #ddd;">
+                    <ul class="remarks-list">
+                        <li ng-repeat="remark in item.Remarks">
+                            <img src="{{remark.UserPictureUrl}}" />
+                            ({{remark.RemarkTime | date:"MM-dd hh:mm"}}):
+                            {{remark.Remarks}}
+                        </li>
+                    </ul>
+                    <button class="button button-stable button-small button-outline button-clear pull-right" ng-click="doRemark({{item.ID}})" >
+                        <i class="icon ion-compose"></i>
+                    </button>
+                </div>
+            </div>
+        </ion-list>
+        <ion-infinite-scroll ng-if="scollData.haveData" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

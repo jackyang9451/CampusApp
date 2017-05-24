@@ -1,0 +1,22 @@
+﻿<ion-view view-title="新闻资讯">
+    <ion-content padding ="true">
+        <ion-list>
+            <ion-item>
+                <h2 class="center">{{data.Title}}</h2>
+                <p class="center">{{data.SubmittedTime | date:"MM-dd hh:mm"}}</p>
+            </ion-item>
+            <ion-item class="item-text-wrap">
+                <div ng-bind-html="data.Contents"></div>
+            </ion-item>
+            <ion-item>
+                <h2 class="center">校长回复</h2>
+                <p class="center">{{data.RepliedTime | date:"MM-dd hh:mm"}}</p>
+            </ion-item>
+            <ion-item class="item-text-wrap">
+                <div ng-bind-html="data.RepliedContents"></div>
+            </ion-item>
+        </ion-list>
+        
+        
+    </ion-content>
+</ion-view>

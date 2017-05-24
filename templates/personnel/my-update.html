@@ -1,0 +1,38 @@
+﻿<ion-view view-title="修改个人信息" cache-view="false">
+    <ion-content>
+        <ion-list type="card">
+            <div class="text-center">
+                <img src="{{data.PictureUrl ? data.PictureUrl : 'img/person.png'}}" style="width: 50%; border-radius: 50%; margin-top: 10px; border: solid 2px blue;" />
+                <p>
+                    <a class="button button-icon icon ion-camera" ng-click="getPicture(0)"></a>
+                    <a class="button button-icon icon ion-images" ng-click="getPicture(1)"></a>
+                </p>
+            </div>
+            <label class="item item-input">
+                <span class="input-label">呢称</span>
+                <input type="text" ng-model="data.Nickname">
+            </label>
+            <label class="item item-input inline-form">
+                <span class="input-label">性别</span>
+                <ion-list>
+                    <ion-radio ng-model="data.Sex" ng-value="'男'">男</ion-radio>
+                    <ion-radio ng-model="data.Sex" ng-value="'女'">女</ion-radio>
+                </ion-list>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">姓名</span>
+                <input type="text" ng-model="data.Name">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">学号</span>
+                <input type="text" ng-model="data.StudentNo">
+            </label>
+        </ion-list>
+        <div class="padding">
+            <a class="button button-click button-assertive button-block" ng-click="doUpdate()">
+                修改
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
+
